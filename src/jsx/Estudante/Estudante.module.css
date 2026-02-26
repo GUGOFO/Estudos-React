@@ -1,0 +1,11 @@
+.estudante{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid hsla(0, 0%, 50%, 0.8); 
+}
+
+.estudante p{
+    margin: 0;
+}
