@@ -1,0 +1,17 @@
+.UserGreating{
+    font-size: 2.5rem;
+    background-color: rgb(44, 235, 44);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.login{
+    font-size: 2.5rem;
+    background-color: rgb(235, 44, 44);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}

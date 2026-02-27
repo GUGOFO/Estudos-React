@@ -1,12 +1,9 @@
-import Estudante from "./jsx/estudante/estudante.jsx";
+import UserGreating from "./jsx/ConditionalRendering/UserGreating.jsx";
 
 function App(){
     return(
         <>
-            <Estudante nome="Gustavo" idade={30} ehEstudante = {true}/>
-            <Estudante nome="Ana" idade={20} ehEstudante = {true}/>
-            <Estudante nome="Criança" idade={10} ehEstudante = {false}/>
-            <Estudante/>
+            <UserGreating estaLogado={false} userName="Gugofo"/>
         </>
     );
 }
