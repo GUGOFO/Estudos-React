@@ -1,9 +1,9 @@
-import UserGreating from "./jsx/ConditionalRendering/UserGreating.jsx";
+import List from "./jsx/renderingLists/List.jsx";
 
 function App(){
     return(
         <>
-            <UserGreating estaLogado={false} userName="Gugofo"/>
+            <List/>
         </>
     );
 }
