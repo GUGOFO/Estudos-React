@@ -1,10 +1,6 @@
+import styles from "./List.module.css"
 
-function List(){
-
-    const frutas = [{id: 1 ,nome: "maça", calorias: 30},
-                    {id: 2 ,nome: "laranja", calorias: 60},
-                    {id: 3 ,nome: "banana", calorias: 20},
-                    {id: 4 ,nome: "cereja", calorias: 30665}];
+function List({categoria = "Categoria", items = ""}){
 
     // frutas.sort((a,b) => a.nome.localeCompare(b.nome));  alfaetivo
     //frutas.sort((a,b) => b.nome.localeCompare(a.nome));   reverso alfabetico
@@ -14,11 +10,14 @@ function List(){
     //const baixasCalorias = frutas.filter(fruta => fruta.calorias < 50);
     //const AltasCalorias = frutas.filter(fruta => fruta.calorias > 50);
 
-    const ListaDeItens = frutas.map(fruta => <li key={fruta.id}>
-                                                {fruta.nome}: &nbsp;
-                                                <b>{fruta.calorias}</b></li>);
+    const ListaDeItens = items.map(item => <li key={item.id}>
+                                                {item.nome}: &nbsp;
+                                                <b>{item.calorias}</b></li>);
 
-    return(<ol>{ListaDeItens}</ol>)
+    return(<>
+            <h3 className={styles.categoriaLista}>{categoria}</h3>
+            <ol className={styles.itensLista}>{ListaDeItens}</ol>
+           </>)
 }
 
 export default List
