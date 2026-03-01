@@ -2,17 +2,17 @@ function Button(){
 
     let contador = 0;
 
-    const clicado = nome => {
-        if(contador < 3){
-            contador++;
-            console.log(`${nome} voce me clicou ${contador} vezes!`);
-        }
-        else{
-            console.log(`${nome.toUpperCase()} PARA DE ME CLICAR PORRA!!!!!!!!`);
-        }
-    }
+    const clicado = e => {
+        const btn = e.target;
+        const img = document.querySelector("img")
 
-    return(<button onClick={() => clicado("Gustavo")}>Me clique</button>)
+        img.style.display = "none"
+
+        btn.style.backgroundColor = "red"
+        btn.textContent = "DESAPARECEU TROXAO"
+    } 
+
+    return(<button onClick={(e) => clicado(e)}>Me clique</button>)
 }
 
 export default Button
