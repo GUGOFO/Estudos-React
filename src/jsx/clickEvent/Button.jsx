@@ -1,10 +1,18 @@
 function Button(){
 
-    const clicado = () => console.log("oi, como vc ta? eu quero saber a cor da sua calcinha lalaalalallalalaala");
-    
-    const clicado2 = nome => console.log(`${nome} para de me clocar`)
+    let contador = 0;
 
-    return(<button onClick={() => clicado2("Gustavo")}>Me clique</button>)
+    const clicado = nome => {
+        if(contador < 3){
+            contador++;
+            console.log(`${nome} voce me clicou ${contador} vezes!`);
+        }
+        else{
+            console.log(`${nome.toUpperCase()} PARA DE ME CLICAR PORRA!!!!!!!!`);
+        }
+    }
+
+    return(<button onClick={() => clicado("Gustavo")}>Me clique</button>)
 }
 
 export default Button
