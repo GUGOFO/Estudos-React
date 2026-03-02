@@ -1,9 +1,9 @@
-import UseState from "./jsx/useState/UseState";
+import Contador from "./jsx/Contador/Contador.jsx"
 
 function App(){
 
     return(
-        <UseState/>
+        <Contador/>
     );
 }
 
