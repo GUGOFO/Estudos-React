@@ -1,9 +1,9 @@
-import Contador from "./jsx/Contador/Contador.jsx"
+import OnChange from "./jsx/OnChange/OnChange";
 
 function App(){
 
     return(
-        <Contador/>
+        <OnChange/>
     );
 }
 
