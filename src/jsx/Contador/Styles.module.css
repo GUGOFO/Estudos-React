@@ -6,6 +6,10 @@
     gap: 30px;
 }
 
+body{
+    height: 100vh;
+}
+
 .container{
     text-align: center;
 
@@ -28,4 +32,12 @@
     background-color: purple;
     box-shadow: 3px 3px 5px hsla(300, 100%, 25%, 0.5);
     cursor: pointer;
+}
+
+.btn:hover{
+    background-color: hsl(300, 100%, 20%);
+}
+
+.btn:active{
+    background-color: hsl(300, 100%, 15%);
 }
