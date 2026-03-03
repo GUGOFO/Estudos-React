@@ -1,9 +1,9 @@
-import OnChange from "./jsx/OnChange/OnChange";
+import Updater from "./jsx/updaterFunction/UpdaterFunction";
 
 function App(){
 
     return(
-        <OnChange/>
+        <Updater/>
     );
 }
 
