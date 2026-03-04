@@ -1,9 +1,9 @@
-import Update from "./jsx/updateArrayObject/UpdateArrayObject";
+import ToDoList from "./jsx/ToDoList/ToDoList";
 
 function App(){
 
     return(
-        <Update/>
+        <ToDoList/>
     );
 }
 
