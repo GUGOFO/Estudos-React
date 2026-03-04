@@ -1,9 +1,9 @@
-import UpdateObjects from "./jsx/updateObjects/UpdateObjects";
+import Update from "./jsx/updateArrayObject/UpdateArrayObject";
 
 function App(){
 
     return(
-        <UpdateObjects/>
+        <Update/>
     );
 }
 
