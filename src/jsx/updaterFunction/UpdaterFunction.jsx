@@ -2,38 +2,38 @@ import React, {useState} from "react";
 
 /*
     TATATA deixa eu explicar, quando voce tenta 
-    atualizar 2x seguidas com o useValor o react n atualiza
+    atualizar 2x seguidas com o setValor o react n atualiza
     toda vezz, porem so quando a função acabar, ai ele atualiza
 
     portando fazer:
-        useValor(valor - 1);
-        useValor(valor - 1);
-        useValor(valor - 1);
+        setValor(valor - 1);
+        setValor(valor - 1);
+        setValor(valor - 1);
         
     É igual a:
-        useValor(0 - 1);
-        useValor(0 - 1);
-        useValor(0 - 1);
+        setValor(0 - 1);
+        setValor(0 - 1);
+        setValor(0 - 1);
         
 */
 function Updater(){
 
-    const [valor, useValor] = useState(0);
+    const [valor, setValor] = useState(0);
 
     function diminuir(){
-        useValor( v => v - 1);
-        useValor( v => v - 1);
-        useValor( v => v - 1);
+        setValor( v => v - 1);
+        setValor( v => v - 1);
+        setValor( v => v - 1);
     }
 
     function rezetar(){
-        useValor(0);
+        setValor(0);
     }
 
     function aumentar(){
-        useValor( v => v + 1);
-        useValor( v => v + 1);
-        useValor( v => v + 1);
+        setValor( v => v + 1);
+        setValor( v => v + 1);
+        setValor( v => v + 1);
     }
 
     return(

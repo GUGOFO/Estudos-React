@@ -1,9 +1,9 @@
-import Updater from "./jsx/updaterFunction/UpdaterFunction";
+import UpdateObjects from "./jsx/updateObjects/UpdateObjects";
 
 function App(){
 
     return(
-        <Updater/>
+        <UpdateObjects/>
     );
 }
 
