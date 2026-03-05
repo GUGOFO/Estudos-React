@@ -1,0 +1,131 @@
+body{
+    margin: 0;
+    background-color: rgba(192, 192, 192, 0.367);
+    font-family: monospace;
+}
+
+#conteinerPrincipal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    gap: 3vh;
+}
+
+#btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+#numero{
+    height: 4vh;
+    width: 20vh;
+    text-align: center;
+    font-size: 3.5vh;
+    font-weight: bold;
+    border-radius: 2vh;
+    background-color: #003366;
+    color: white;
+}
+
+#resultados{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+}
+
+.resultado{
+    height: 5vh;
+    width: 36vh;
+    font-size: 3vh;
+    border-radius: 2vh;
+    font-weight: bold;
+    color: white;
+    background-color: #006633;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#formasGeometricas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16vh;
+}
+
+#circuloGrande{
+    height: 40vh;
+    width: 40vh;
+    border: black 1vh solid;
+    border-radius: 50%;
+    background-image: linear-gradient(to top, #003366, #006633); 
+}
+
+#quadradoGrande{
+    height: 40vh;
+    width: 40vh;
+    border: black 1vh solid;
+    background-image: linear-gradient(to top, #003366, #006633); 
+}
+
+/* Deixando claro q usei o chat pra fazer esse triangulo
+me recuso a aprender a desenhar usando CSS por em quanto askkaa*/
+
+#trianguloGrande{
+    position: relative;
+    width: 48vh;
+    height: 41.568vh;
+    background-color: black; 
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#trianguloGrande::after {
+    content: "";
+    position: absolute;
+    inset: 0; 
+    background: linear-gradient(to top, #003366, #006633);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform-origin: 50% 66.66%; 
+    
+    transform: scale(0.92); 
+}
+
+#circuloPequeno{
+    height: 16vh;
+    width: 16vh;
+    border: black 1vh solid;
+    border-radius: 50%;
+    background-image: linear-gradient(to top, #003366, #006633); 
+}
+
+#quadradoPequeno{
+    height: 16vh;
+    width: 16vh;
+    border: black 1vh solid;
+    background-image: linear-gradient(to top, #003366, #006633); 
+}
+
+#trianguloPequeno{
+    position: relative;
+    width: 19.2vh;
+    height: 16.6272vh;
+    background-color: black; 
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#trianguloPequeno::after {
+    content: "";
+    position: absolute;
+    inset: 0; 
+    background: linear-gradient(to top, #003366, #006633);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform-origin: 50% 66.66%; 
+    
+    transform: scale(0.85); 
+}

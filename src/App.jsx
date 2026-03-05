@@ -1,9 +1,9 @@
-import PedraPapelTesoura from "./jsx/_Projetos/PedraPapelTesoura/PedraPapelTesoura";
+import CalculadoraGeometrica from "./jsx/_Projetos/CalculadoraGeometrica/CalculadoraGeometrica";
 
 function App(){
 
     return(
-        <PedraPapelTesoura/>
+        <CalculadoraGeometrica/>
     );
 }
 
