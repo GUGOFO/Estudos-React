@@ -1,9 +1,9 @@
-import WatsapClone from "./jsx/_Projetos/WatsapClone/WatsapClone";
+import PedraPapelTesoura from "./jsx/_Projetos/PedraPapelTesoura/PedraPapelTesoura";
 
 function App(){
 
     return(
-        <WatsapClone/>
+        <PedraPapelTesoura/>
     );
 }
 
