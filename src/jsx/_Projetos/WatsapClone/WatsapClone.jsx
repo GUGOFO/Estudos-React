@@ -17,13 +17,13 @@ function WatsapClone(){
 
     function submitMsgEnviada(e){
         e.preventDefault()
-        setHistoricoConversas(h => [...h, {texto: msgEnviada, classe: "enviadorMsg"}])
+        if(msgEnviada.trim() != "") setHistoricoConversas(h => [...h, {texto: msgEnviada, classe: "enviadorMsg"}])
         setMsgEnviada("")
     }
     
     function submitMsgRecebida(e){
         e.preventDefault()
-        setHistoricoConversas(h => [...h, {texto: msgRecebida, classe: "recebidorMsg"}])
+        if(msgRecebida.trim() != "") setHistoricoConversas(h => [...h, {texto: msgRecebida, classe: "recebidorMsg"}])
         setMsgRecebida("")
     }
 
