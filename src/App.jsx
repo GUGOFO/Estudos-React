@@ -1,9 +1,9 @@
-import ToDoList from "./jsx/ToDoList/ToDoList";
+import WatsapClone from "./jsx/_Projetos/WatsapClone/WatsapClone";
 
 function App(){
 
     return(
-        <ToDoList/>
+        <WatsapClone/>
     );
 }
 
