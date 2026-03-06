@@ -1,9 +1,9 @@
-import CalculadoraGeometrica from "./jsx/_Projetos/CalculadoraGeometrica/CalculadoraGeometrica";
+import Exemplo from "./jsx/UseEffect/Exemplo";
 
 function App(){
 
     return(
-        <CalculadoraGeometrica/>
+        <Exemplo/>
     );
 }
 
