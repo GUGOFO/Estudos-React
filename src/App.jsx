@@ -1,10 +1,11 @@
-import UseRef from "./jsx/UseRef/UseRef";
+import RelogioDeParada from "./jsx/_Projetos/RelogioDeParada/RelogioDeParada";
 
 function App(){
 
     return(
         <>
-            <UseRef/>
+            <RelogioDeParada/>
+            <RelogioDeParada/>
         </>
     );
 }
