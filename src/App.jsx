@@ -1,9 +1,11 @@
-import Exemplo from "./jsx/UseEffect/Exemplo";
+import UseRef from "./jsx/UseRef/UseRef";
 
 function App(){
 
     return(
-        <Exemplo/>
+        <>
+            <UseRef/>
+        </>
     );
 }
 
