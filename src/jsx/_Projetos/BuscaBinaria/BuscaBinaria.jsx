@@ -8,6 +8,11 @@ function BuscaBinaria(){
     const [numeroEscolhido, setNumeroEscolhido] = useState(NaN);
     const [desabilitados, setDesabilitados] = useState([false,false,true]);
     const [visibilidadeAlerta, setVisibilidadeAlerta] = useState("none");
+    const [estaAtivo, setEstaAtivo] = useState(true)
+
+    const [e, setE] = useState(-1);
+    const [d, setD] = useState(numeros.length);
+    const [m, setM] = useState((e+d)/2);
     
     function modificação(e){
         const inputDoUsuario = e.target;
@@ -41,26 +46,54 @@ function BuscaBinaria(){
         }
         else{
             setVisibilidadeAlerta("none")
-
-            
+            proximo()
         }
     }
 
+    function proximo(){
+        let novoE = e;
+        let novoD = d;
+
+        if(novoD - novoE == 1) return;
+
+        if(numeros[m] == numeroEscolhido) return;
+
+        if(numeros[m] > numeroEscolhido) novoD = m - 1;
+        else novoE = m;
+
+        setE(novoE);
+        setD(novoD);
+        setM(Math.floor((novoE + novoD) / 2));
+
+        console.log("--- COMEÇA AQUI ---")
+        console.log(novoE);
+        console.log(novoD);
+        console.log(Math.floor((novoE + novoD) / 2));
+    }
+
     function resetar(){
-        setNumeros([NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN]);
-        setNumeroEscolhido(NaN);
+        setE(-1);
+        setD(9);
+        setM(4);
     }
 
     return(
         <div className={Styles.divBuscaBinaria}>
             <h1 className="titulo">Busca Binaria interativa</h1>
 
-            <div className={Styles.nodes}>
+            <div className={Styles.nodes} 
+            style={{
+                "--ver-e-global": e === -1 ? "block" : "none",
+                "--ver-d-global": d === numeros.length ? "block" : "none"
+            }}>
 
                 {numeros.map((numero, id) => {
                     return (
-                        <div className={Styles.node} key={id}>
-                            <div className={Styles.setaParaBaixo} style={id + 1 != 4 ? {visibility: "hidden"} : {visibility: "visible"}} ></div>
+                        <div className={Styles.node} key={id} style={{
+                            "--ver-e-local": e === id ? "visible" : "hidden",
+                            "--ver-d-local": d === id ? "visible" : "hidden"
+                        }}>
+                            <div className={Styles.setaParaBaixo} style={ m == id && estaAtivo ? {visibility: "visible"} : {visibility: "hidden"}} ></div>
                             <input  type="number"
                                     className={Styles.numero} 
                                     id={`numero${id}`}

@@ -29,6 +29,7 @@ h1,h2{
 
 .nodes::after{
     content: "D";
+    display: var(--ver-d-global, none);
     font-size: 40px;
     font-weight: bold;
     color: green;
@@ -40,6 +41,7 @@ h1,h2{
 
 .nodes::before{
     content: "E";
+    display: var(--ver-e-global, none);
     font-size: 40px;
     font-weight: bold;
     color: red;
@@ -60,7 +62,7 @@ h1,h2{
 
 .node::after{
     content: "D";
-    visibility: hidden;
+    visibility: var(--ver-d-local, hidden);
     font-size: 40px;
     font-weight: bold;
     color: green;
@@ -71,7 +73,7 @@ h1,h2{
 
 .node::before{
     content: "E";
-    visibility: hidden;
+    visibility: var(--ver-e-local, hidden);
     font-size: 40px;
     font-weight: bold;
     color: red;
