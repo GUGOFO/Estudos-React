@@ -6,7 +6,6 @@ function BuscaBinaria(){
     
     const [numeros, setNumeros] = useState([NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN]);
     const [numeroEscolhido, setNumeroEscolhido] = useState(NaN);
-    const [desabilitados, setDesabilitados] = useState([false,false,true]);
     const [visibilidadeAlerta, setVisibilidadeAlerta] = useState("none");
     const [estaAtivo, setEstaAtivo] = useState(true)
 
@@ -51,6 +50,7 @@ function BuscaBinaria(){
     }
 
     function proximo(){
+        setEstaAtivo(true)
         let novoE = e;
         let novoD = d;
 
@@ -58,7 +58,7 @@ function BuscaBinaria(){
 
         if(numeros[m] == numeroEscolhido) return;
 
-        if(numeros[m] > numeroEscolhido) novoD = m - 1;
+        if(numeros[m] > numeroEscolhido) novoD = m;
         else novoE = m;
 
         setE(novoE);
@@ -75,6 +75,7 @@ function BuscaBinaria(){
         setE(-1);
         setD(9);
         setM(4);
+        setEstaAtivo(false)
     }
 
     return(
@@ -93,18 +94,25 @@ function BuscaBinaria(){
                             "--ver-e-local": e === id ? "visible" : "hidden",
                             "--ver-d-local": d === id ? "visible" : "hidden"
                         }}>
-                            <div className={Styles.setaParaBaixo} style={ m == id && estaAtivo ? {visibility: "visible"} : {visibility: "hidden"}} ></div>
+                            <div className={Styles.setaParaBaixo} 
+                                style={ /* Entrei em convulsão com isso mas FDS funcionanakosaks*/
+                                    (m == id && d - e != 1) ||
+                                    (e == m && d - e == 1 && id - 1 == e) ? {visibility: "visible"} :
+                                                                            {visibility: "hidden"}} ></div>
                             <input  type="number"
                                     className={Styles.numero} 
                                     id={`numero${id}`}
                                     placeholder="0"
                                     onChange={(e) => modificação(e)}
                                     value={Number.isNaN(numero) ? "" : numero}
+                                    disabled={estaAtivo ? true : false}
                             />
                         </div>
                     )
                 })}
-
+            {d - e === 1 && d === numeros.length && (
+                <div className={Styles.setaParaBaixo} style={{position: "absolute", top: "0%", right: "-7%"}}></div>
+            )}
             </div>
 
             <p id={Styles.alerta} style={{display: visibilidadeAlerta}}>
@@ -120,12 +128,12 @@ function BuscaBinaria(){
                     placeholder="0" 
                     onChange={(e) => modificarEscolha(e)} 
                     value={Number.isNaN(numeroEscolhido) ? "" : numeroEscolhido}
+                    disabled={estaAtivo ? true : false}
             />
 
             <div className={Styles.botoes}>
-                <button id={Styles.resetar} disabled={desabilitados[0]} onClick={() => resetar()} >RESETAR</button>
-                <button id={Styles.rodar} disabled={desabilitados[1]} onClick={() => rodar()}>RODAR</button>
-                <button id={Styles.proximo} disabled={desabilitados[2]}>PROXIMO</button>
+                <button id={Styles.resetar} onClick={() => resetar()} >RESETAR</button>
+                <button id={Styles.rodar} onClick={() => rodar()}>RODAR</button>
             </div>
             
         </div>
