@@ -4,7 +4,8 @@ import Styles from "./BuscaBinaria.module.css"
 
 function BuscaBinaria(){
     
-    const [numeros, setNumeros] = useState([0,0,0,0,0,0,0,0,0]);
+    const [numeros, setNumeros] = useState([NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN]);
+    const [numeroEscolhido, setNumeroEscolhido] = useState(NaN);
     let index = -1;
     
     function modificação(e){
@@ -19,6 +20,29 @@ function BuscaBinaria(){
         });
     }
 
+    function modificarEscolha(e){
+        const valor = parseInt(e.target.value);
+        setNumeroEscolhido(n => n = valor);
+    }
+
+    function rodar(){
+        let numeroNaoDefinido = 0;
+        numeros.forEach(numero => { if(Number.isNaN(numero)) numeroNaoDefinido++})
+        
+        if(numeroNaoDefinido || ordemIncorreta() || Number.isNaN(numeroEscolhido)){
+            console.log(ordemIncorreta())
+            console.log(numeroNaoDefinido);
+            console.log(numeroEscolhido);
+            console.log(numeros)
+        }
+    }
+
+    function ordemIncorreta(){
+        for(let i = 0; i < numeros.length - 2; i++)
+            if(numeros[i] >= numeros[i + 1]) return true;
+        return false;
+    }
+
     return(
         <div className="divBuscaBinaria">
             <h1 className="titulo">Busca Binaria interativa</h1>
@@ -28,13 +52,17 @@ function BuscaBinaria(){
                 {numeros.map((numero, id) => {
                     return (
                         <div className={Styles.node} key={id}>
-                            <div className={Styles.setaParaBaixo}></div>
+                            <div className={Styles.setaParaBaixo} style={index + 1 == 4 ? {visibility: "hidden"} : {display: "visible"}} ></div>
                             <input type="number" className={Styles.numero} id={`numero${++index}`} placeholder="0" onChange={(e) => modificação(e)}/>
                         </div>
                     )
                 })}
 
             </div>
+
+            <input type="number" className={Styles.numero} placeholder="0" onChange={(e) => modificarEscolha(e)}/>
+            <button onClick={() => rodar()}>RODAR CODIGO</button>
+            
         </div>
     )
 
