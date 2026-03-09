@@ -7,11 +7,11 @@ function BuscaBinaria(){
     const [numeros, setNumeros] = useState([NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN]);
     const [numeroEscolhido, setNumeroEscolhido] = useState(NaN);
     const [visibilidadeAlerta, setVisibilidadeAlerta] = useState("none");
-    const [estaAtivo, setEstaAtivo] = useState(true)
+    const [estaAtivo, setEstaAtivo] = useState(false)
 
     const [e, setE] = useState(-1);
     const [d, setD] = useState(numeros.length);
-    const [m, setM] = useState((e+d)/2);
+    const [m, setM] = useState(Math.floor((e+d)/2));
     
     function modificação(e){
         const inputDoUsuario = e.target;
@@ -106,6 +106,7 @@ function BuscaBinaria(){
                                     onChange={(e) => modificação(e)}
                                     value={Number.isNaN(numero) ? "" : numero}
                                     disabled={estaAtivo ? true : false}
+                                    style={{backgroundColor: !(id > e && id <= d) && "red" }}
                             />
                         </div>
                     )
