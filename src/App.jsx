@@ -1,10 +1,10 @@
-import RelogioDeParada from "./jsx/_Projetos/RelogioDeParada/RelogioDeParada";
+import BuscaBinaria from "./jsx/_Projetos/BuscaBinaria/BuscaBinaria";
 
 function App(){
 
     return(
         <>
-            <RelogioDeParada/>
+            <BuscaBinaria/>
         </>
     );
 }
