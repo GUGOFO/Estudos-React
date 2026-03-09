@@ -44,7 +44,7 @@ function BuscaBinaria(){
     }
 
     return(
-        <div className="divBuscaBinaria">
+        <div className={Styles.divBuscaBinaria}>
             <h1 className="titulo">Busca Binaria interativa</h1>
 
             <div className={Styles.nodes}>
@@ -52,16 +52,22 @@ function BuscaBinaria(){
                 {numeros.map((numero, id) => {
                     return (
                         <div className={Styles.node} key={id}>
-                            <div className={Styles.setaParaBaixo} style={index + 1 == 4 ? {visibility: "hidden"} : {display: "visible"}} ></div>
+                            <div className={Styles.setaParaBaixo} style={index + 1 != 4 ? {visibility: "hidden"} : {display: "visible"}} ></div>
                             <input type="number" className={Styles.numero} id={`numero${++index}`} placeholder="0" onChange={(e) => modificação(e)}/>
                         </div>
                     )
                 })}
 
             </div>
+            
+            <h2>Coloque o numero que deseja buscar</h2>
+            <input type="number" className={Styles.numero} name="inputUsuario" placeholder="0" onChange={(e) => modificarEscolha(e)}/>
 
-            <input type="number" className={Styles.numero} placeholder="0" onChange={(e) => modificarEscolha(e)}/>
-            <button onClick={() => rodar()}>RODAR CODIGO</button>
+            <div className={Styles.botoes}>
+                <button id={Styles.resetar} >RESETAR</button>
+                <button id={Styles.rodar} onClick={() => rodar()}>RODAR</button>
+                <button id={Styles.proximo} disabled={true}>PROXIMO</button>
+            </div>
             
         </div>
     )

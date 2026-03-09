@@ -5,11 +5,49 @@ body{
     text-align: center;
 }
 
+h1,h2{
+    margin: 0;
+}
+
+.divBuscaBinaria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .nodes{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    position: relative;
+    margin-bottom: 70px;
+}
+
+.nodes::after{
+    content: "D";
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+
+    position: absolute;
+    top: 100%;
+    right: -6%;
+}
+
+.nodes::before{
+    content: "E";
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    
+    position: absolute;
+    top: 100%;
+    left: -6%;
 }
 
 .node{
@@ -17,7 +55,32 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
     gap: 10px;
+}
+
+.node::after{
+    content: "D";
+    visibility: hidden;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+    
+    position: absolute;
+    top: 100%;
+}
+
+.node::before{
+    content: "E";
+    visibility: hidden;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    
+    position: absolute;
+    top: 100%;
 }
 
 .numero{
@@ -31,6 +94,41 @@ body{
     text-align: center;
 }
 
+.botoes{
+    display: flex;
+    gap: 10px;
+}
+
+button{
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 0 20px;
+    color: white;
+}
+
+button:hover{
+    filter: brightness(95%);
+}
+
+button:active{
+    filter: brightness(90%);
+}
+
+#resetar{
+    background-color: red;
+}
+
+#rodar{
+    background-color: green;
+}
+
+#proximo{
+    background-color: blue;
+}
+
 /*Isso foi feito pelo chat pq tenho preguiça de fazer coisas bonitinhas akskas (COMEÇO)*/
 
 .setaParaBaixo {
@@ -40,7 +138,7 @@ body{
     border-right: 20px solid transparent;
     border-top: 20px solid #1e2d44; 
     position: relative;
-    margin: 50px auto;
+    margin-top: 40px;
 }
 
 .setaParaBaixo::after {
