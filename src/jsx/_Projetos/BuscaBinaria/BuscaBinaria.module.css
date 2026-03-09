@@ -2,6 +2,7 @@
 body{
     height: 100vh;
     margin: 0;
+    text-align: center;
 }
 
 .nodes{
@@ -19,7 +20,7 @@ body{
     gap: 10px;
 }
 
-#numero{
+.numero{
     height: 60px;
     width: 60px;
     border: 6px solid black;
