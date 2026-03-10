@@ -134,10 +134,10 @@ button:disabled{
 }
 
 #alerta{
-    background-color: hsl(0, 75%, 52%);
+    background-color: hsl(0, 75%, 50%);
     padding: 20px;
     border-radius: 15px;
-    border: 7px solid hsl(0, 76%, 37%);
+    border: 7px solid hsl(0, 76%, 35%);
     color: white;
     font-weight: bold;
 }
