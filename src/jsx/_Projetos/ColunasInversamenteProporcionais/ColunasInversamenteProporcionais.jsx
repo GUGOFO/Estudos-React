@@ -20,13 +20,22 @@ function ColunasInversamenteProporcionais(){
         setNovoValor(1);
     }
 
-    useEffect(() => {
-        colunas.length != 0 && setTamanhoTotal(t => t = colunas.reduce(soma))
-    }, [colunas])
+    function aleatorizar(){
+        const novoNumColunas = Math.floor(Math.random() * 10 + 1);
+        let novasColunas = [];
+
+        for(let i = 0; i < novoNumColunas; i++) novasColunas = [...novasColunas, Math.floor(Math.random() * 20 + 1)]
+        console.log(novasColunas)
+        setColunas(novasColunas)
+    }
 
     function soma(total, elemento){
         return total + elemento;
     }
+
+    useEffect(() => {
+        colunas.length != 0 && setTamanhoTotal(t => t = colunas.reduce(soma))
+    }, [colunas])
 
     return(
         <div className={Styles.tudo}> 
@@ -38,7 +47,8 @@ function ColunasInversamenteProporcionais(){
 
             </div>
             <input type="number" id={Styles.input} min={1} value={novoValor} onChange={(e) => atualizarValor(e)}/>
-            <button id={Styles.btn} onClick={() => adicionar()}>+</button>
+            <button className={Styles.btn} onClick={() => adicionar()}>+</button>
+            <button className={Styles.btn} onClick={() => aleatorizar()}>ALEATORIZAR</button>
         </div>
     )
 

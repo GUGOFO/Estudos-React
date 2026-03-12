@@ -37,7 +37,7 @@ body{
     border-radius: 10px;
 }
 
-#btn{
+.btn{
     padding: 20px 25px;
     border-radius: 10px;
     border: none;
@@ -48,10 +48,10 @@ body{
     background-color: hsl(0, 0%, 95%);
 }
 
-#btn:hover{
+.btn:hover{
     background-color: hsl(0, 0%, 90%);
 }
 
-#btn:active{
+.btn:active{
     background-color: hsl(0, 0%, 85%);
 }
