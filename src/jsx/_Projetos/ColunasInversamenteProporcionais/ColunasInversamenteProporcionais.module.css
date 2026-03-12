@@ -3,6 +3,14 @@ body{
     margin: 0;
 }
 
+.tudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .divColunas{
     display: flex;
     justify-content: space-evenly;
@@ -16,4 +24,34 @@ body{
     background-color: blue;
     height: var(--altura, 0px);
     width:100%;
+}
+
+#input{
+    height: 30px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 20px;
+    border: 3px black solid;
+    border-radius: 10px;
+}
+
+#btn{
+    padding: 20px 25px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: hsl(0, 0%, 95%);
+}
+
+#btn:hover{
+    background-color: hsl(0, 0%, 90%);
+}
+
+#btn:active{
+    background-color: hsl(0, 0%, 85%);
 }
