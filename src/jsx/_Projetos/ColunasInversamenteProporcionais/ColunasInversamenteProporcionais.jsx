@@ -4,8 +4,7 @@ import Styles from "./ColunasInversamenteProporcionais.module.css";
 function ColunasInversamenteProporcionais(){
 
     const [colunas, setColunas] = useState([]);
-    const [tamanhoTotal, setTamanhoTotal] = useState(1);
-    const [novoValor, setNovoValor] = useState(1);
+    const [novoValor, setNovoValor] = useState(Math.floor(Math.random() * 100 + 1));
 
     function atualizarValor(e){
         const valorAtualizado = Number(e.target.value);
@@ -17,32 +16,24 @@ function ColunasInversamenteProporcionais(){
 
     function adicionar(){
         setColunas(c => c = [...c, novoValor]);
-        setNovoValor(1);
+        setNovoValor(Math.floor(Math.random() * 100 + 1));
     }
 
     function aleatorizar(){
-        const novoNumColunas = Math.floor(Math.random() * 10 + 1);
+        const novoNumColunas = Math.floor(Math.random() * 100 + 1);
         let novasColunas = [];
 
-        for(let i = 0; i < novoNumColunas; i++) novasColunas = [...novasColunas, Math.floor(Math.random() * 20 + 1)]
+        for(let i = 0; i < novoNumColunas; i++) novasColunas = [...novasColunas, Math.floor(Math.random() * 100 + 1)]
         console.log(novasColunas)
         setColunas(novasColunas)
     }
-
-    function soma(total, elemento){
-        return total + elemento;
-    }
-
-    useEffect(() => {
-        colunas.length != 0 && setTamanhoTotal(t => t = colunas.reduce(soma))
-    }, [colunas])
 
     return(
         <div className={Styles.tudo}> 
             <div className={Styles.divColunas}>
                 {colunas.map((coluna, id) => { return <div className={Styles.coluna} 
                                                         key={id} 
-                                                        style={{ "--altura" : `${(coluna/tamanhoTotal) * 100}%` }}>
+                                                        style={{ "--altura" : `${(coluna/Math.max(...colunas)) * 100}%` }}>
                 </div> })}
 
             </div>
