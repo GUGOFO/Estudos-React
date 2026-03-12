@@ -1,0 +1,19 @@
+body{
+    height: 100vh;
+    margin: 0;
+}
+
+.divColunas{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: end;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(45, 174, 235);
+}
+
+.coluna{
+    background-color: blue;
+    height: var(--altura, 0px);
+    width:100%;
+}
