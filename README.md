@@ -20,4 +20,25 @@ Apos isso entre no http que aparece, normalmente http://localhost:5173/
 
 Boa sorte, espero que goste doque vera
 
+## "Quero entrar em um projeto especifico"
 
+Para isso, va no App.jsx na pasta src e troque o nome do cominho do inport e o nome para o projeto que voce quer
+
+### Exemplo:
+
+```bash
+
+import BuscaBinaria from "./jsx/_Projetos/BuscaBinaria/BuscaBinaria";
+
+function App(){
+
+    return(
+        <>
+            <BuscaBinaria/>
+        </>
+    );
+}
+
+export default App
+
+```

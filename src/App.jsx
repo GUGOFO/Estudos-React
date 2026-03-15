@@ -1,10 +1,10 @@
-import ColunasInversamenteProporcionais from "./jsx/_Projetos/ColunasInversamenteProporcionais/ColunasInversamenteProporcionais";
+import BuscaBinaria from "./jsx/_Projetos/BuscaBinaria/BuscaBinaria";
 
 function App(){
 
     return(
         <>
-            <ColunasInversamenteProporcionais/>
+            <BuscaBinaria/>
         </>
     );
 }
