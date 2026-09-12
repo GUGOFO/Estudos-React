@@ -1,4 +1,4 @@
-import Codigo from "./jsx/_Projetos/heap/bola";
+import Codigo from "./jsx/_Projetos/heap/heap";
 
 function App(){
 
