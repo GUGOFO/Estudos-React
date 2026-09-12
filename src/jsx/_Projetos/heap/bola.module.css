@@ -1,0 +1,20 @@
+body{
+    background-color: black;
+}
+
+.divbola{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+}
+
+.divbola:hover{
+    box-shadow: 0px 0px 20px rgb(255, 255, 255);
+    cursor: pointer;
+}

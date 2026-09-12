@@ -1,10 +1,10 @@
-import BuscaBinaria from "./jsx/_Projetos/BuscaBinaria/BuscaBinaria";
+import Codigo from "./jsx/_Projetos/heap/bola";
 
 function App(){
 
     return(
         <>
-            <BuscaBinaria/>
+            <Codigo/>
         </>
     );
 }
